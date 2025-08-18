@@ -14,13 +14,6 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("DevCors", policy =>
     {
-        // policy
-        //     .AllowAnyHeader()
-        //     .AllowAnyMethod()
-        //     .SetIsOriginAllowed(_ => true) // allow all origins
-        //     .AllowCredentials()            // only if you actually need cookies/auth headers
-        //     .SetPreflightMaxAge(TimeSpan.FromHours(1));
-
         policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
 });
@@ -53,17 +46,17 @@ app.UseCors("DevCors");
 
 // Endpoints
 
-app.MapGet("/products", async (AppDb db) =>
+app.MapGet("/api/products", async (AppDb db) =>
     await db.Products.AsNoTracking().ToListAsync())
    .WithName("GetProducts");
 
-app.MapGet("/products/{id:int}", async Task<Results<Ok<Product>, NotFound>> (int id, AppDb db) =>
+app.MapGet("/api/products/{id:int}", async Task<Results<Ok<Product>, NotFound>> (int id, AppDb db) =>
 {
     var p = await db.Products.FindAsync(id);
     return p is null ? TypedResults.NotFound() : TypedResults.Ok(p);
 }).WithName("GetProduct");
 
-app.MapPost("/products", async Task<Results<Created<Product>, ValidationProblem>>
+app.MapPost("/api/products", async Task<Results<Created<Product>, ValidationProblem>>
     (ProductCreateDto dto, AppDb db) =>
 {
     // Manuell validering av data annotations (Minimal API har ingen automatisk)
@@ -77,7 +70,7 @@ app.MapPost("/products", async Task<Results<Created<Product>, ValidationProblem>
     return TypedResults.Created($"/products/{product.Id}", product);
 }).WithName("CreateProduct");
 
-app.MapPut("/products/{id:int}", async Task<Results<NoContent, NotFound, ValidationProblem>>
+app.MapPut("/api/products/{id:int}", async Task<Results<NoContent, NotFound, ValidationProblem>>
     (int id, ProductUpdateDto dto, AppDb db) =>
 {
     var validationErrors = Validate(dto);
@@ -95,7 +88,7 @@ app.MapPut("/products/{id:int}", async Task<Results<NoContent, NotFound, Validat
     return TypedResults.NoContent();
 }).WithName("UpdateProduct");
 
-app.MapDelete("/products/{id:int}", async Task<Results<NoContent, NotFound>> (int id, AppDb db) =>
+app.MapDelete("/api/products/{id:int}", async Task<Results<NoContent, NotFound>> (int id, AppDb db) =>
 {
     var p = await db.Products.FindAsync(id);
     if (p is null) return TypedResults.NotFound();
