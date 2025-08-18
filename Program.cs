@@ -18,6 +18,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevCors", policy =>
+    {
+        // policy
+        //     .AllowAnyHeader()
+        //     .AllowAnyMethod()
+        //     .SetIsOriginAllowed(_ => true) // allow all origins
+        //     .AllowCredentials()            // only if you actually need cookies/auth headers
+        //     .SetPreflightMaxAge(TimeSpan.FromHours(1));
+
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDb>();
@@ -30,6 +45,10 @@ using (var scope = app.Services.CreateScope())
         await db.SaveChangesAsync();
     }
 }
+
+
+// Order matters: CORS before endpoints
+app.UseCors("DevCors");
 
 // Endpoints
 
