@@ -9,7 +9,7 @@ public class DbSeed
         // --- PRODUCTS ---
         if (!context.Products.Any())
         {
-            var products = LoadFromJson<Product>("db/products.json");
+            var products = LoadFromJson<Product>("Db/products.json");
             if (products.Count > 0)
             {
                 context.Products.AddRange(products);
@@ -20,7 +20,7 @@ public class DbSeed
         // --- CUSTOMERS ---
         if (!context.Customers.Any())
         {
-            var customers = LoadFromJson<Customer>("db/customers.json");
+            var customers = LoadFromJson<Customer>("Db/customers.json");
             if (customers.Count > 0)
             {
                 context.Customers.AddRange(customers);
