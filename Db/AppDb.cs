@@ -20,6 +20,9 @@ public class AppDb : DbContext
             .HasIndex(c => c.Email)
             .IsUnique();
 
+        modelBuilder.Entity<Customer>()
+            .OwnsOne(c => c.Address);
+
         modelBuilder.Entity<Order>()
             .HasMany(o => o.Items)
             .WithOne(i => i.Order!)

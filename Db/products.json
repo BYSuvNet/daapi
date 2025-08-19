@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "name": "Uppblåsbar lägereld",
+    "description": "Uppblåsbar lägereld tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 496.21,
+    "brand": "KnasFriluft",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl1.jpg",
+    "dateAdded": "2025-09-20T22:26:06Z"
+  },
+  {
+    "id": 2,
+    "name": "Solcellsdriven myggviskare",
+    "description": "Med Solcellsdriven myggviskare får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 398.78,
+    "brand": "OutdoorOdd",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl2.jpg",
+    "dateAdded": "2025-01-31T12:04:30Z"
+  },
+  {
+    "id": 3,
+    "name": "Portabel stubbe att sitta på",
+    "description": "Det är svårt att förklara Portabel stubbe att sitta på utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 468.44,
+    "brand": "Fjällfån",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl3.jpg",
+    "dateAdded": "2025-06-19T05:59:52Z"
+  },
+  {
+    "id": 4,
+    "name": "Hopfällbar vindskydds-spegel",
+    "description": "Med Hopfällbar vindskydds-spegel får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 250.97,
+    "brand": "Wilderness WTF",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl4.jpg",
+    "dateAdded": "2025-04-23T18:23:55Z"
+  },
+  {
+    "id": 5,
+    "name": "Vattentät bok om eld",
+    "description": "Med Vattentät bok om eld får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 490.26,
+    "brand": "Skogstokig",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl5.jpg",
+    "dateAdded": "2025-06-16T20:21:36Z"
+  },
+  {
+    "id": 6,
+    "name": "GPS för din termos",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker GPS för din termos alltid uppmärksamhet. En praktisk lösning för den törstige, men med en design som gör att man aldrig tröttnar på att prata om den. Passar lika bra för kaffe på morgonen som för vatten under vandringen.",
+    "price": 111.6,
+    "brand": "Skogstokig",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl6.jpg",
+    "dateAdded": "2025-07-03T14:03:24Z"
+  },
+  {
+    "id": 7,
+    "name": "Tält med inbyggd discokula",
+    "description": "Tält med inbyggd discokula tar ditt friluftsliv i en helt ny riktning. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 702.72,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl7.jpg",
+    "dateAdded": "2025-03-27T15:10:08Z"
+  },
+  {
+    "id": 8,
+    "name": "Självuppvärmande marshmallowpinne",
+    "description": "Det är svårt att förklara Självuppvärmande marshmallowpinne utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 179.01,
+    "brand": "Skogstokig",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl8.jpg",
+    "dateAdded": "2025-07-21T19:08:27Z"
+  },
+  {
+    "id": 9,
+    "name": "Uppblåsbar gran för julfirande i skogen",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Uppblåsbar gran för julfirande i skogen är beviset på det. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 175.45,
+    "brand": "Fjällfån",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl9.jpg",
+    "dateAdded": "2025-07-30T08:50:08Z"
+  },
+  {
+    "id": 10,
+    "name": "Kikare för närbilder",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Kikare för närbilder alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 99.9,
+    "brand": "KnasFriluft",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl10.jpg",
+    "dateAdded": "2025-08-05T14:03:34Z"
+  },
+  {
+    "id": 11,
+    "name": "Sovsäck med armar och ben",
+    "description": "Sovsäck med armar och ben tar ditt friluftsliv i en helt ny riktning. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 238.68,
+    "brand": "KnasFriluft",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl11.jpg",
+    "dateAdded": "2025-07-22T05:56:30Z"
+  },
+  {
+    "id": 12,
+    "name": "Campingstol i storlek nyckelring",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Campingstol i storlek nyckelring alltid uppmärksamhet. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 467.62,
+    "brand": "Wilderness WTF",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl12.jpg",
+    "dateAdded": "2025-09-22T12:24:47Z"
+  },
+  {
+    "id": 13,
+    "name": "Regnponcho med inbyggd wifi-förstärkare",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Regnponcho med inbyggd wifi-förstärkare alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 210.94,
+    "brand": "Skogstokig",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl13.jpg",
+    "dateAdded": "2025-03-01T03:01:03Z"
+  },
+  {
+    "id": 14,
+    "name": "Ficklampa som bara lyser bakåt",
+    "description": "Ficklampa som bara lyser bakåt tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 180.49,
+    "brand": "Fjällfån",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl14.jpg",
+    "dateAdded": "2025-06-09T09:26:42Z"
+  },
+  {
+    "id": 15,
+    "name": "Eldstartare som kräver wifi",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Eldstartare som kräver wifi alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 179.29,
+    "brand": "Wilderness WTF",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl15.jpg",
+    "dateAdded": "2025-07-12T20:09:09Z"
+  },
+  {
+    "id": 16,
+    "name": "Campingkastrull med bluetooth",
+    "description": "Det är svårt att förklara Campingkastrull med bluetooth utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 75.98,
+    "brand": "Fjällfån",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl16.jpg",
+    "dateAdded": "2025-07-14T23:14:03Z"
+  },
+  {
+    "id": 17,
+    "name": "Multiverktyg med bara flasköppnare",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Multiverktyg med bara flasköppnare är beviset på det. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 62.82,
+    "brand": "OutdoorOdd",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl17.jpg",
+    "dateAdded": "2025-09-09T16:45:39Z"
+  },
+  {
+    "id": 18,
+    "name": "Trangiakök i guldplast",
+    "description": "Trangiakök i guldplast tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 327.42,
+    "brand": "OutdoorOdd",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl18.jpg",
+    "dateAdded": "2025-09-30T20:17:12Z"
+  },
+  {
+    "id": 19,
+    "name": "Kompass som alltid pekar åt väst",
+    "description": "Kompass som alltid pekar åt väst tar ditt friluftsliv i en helt ny riktning. Tillverkad i robust material och med en design som väcker nyfikenhet. Även om riktningen kan vara oväntad ibland, ger den alltid äventyr och skratt på vägen.",
+    "price": 206.6,
+    "brand": "Wilderness WTF",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl19.jpg",
+    "dateAdded": "2025-06-23T00:08:42Z"
+  },
+  {
+    "id": 20,
+    "name": "Sovsäck i form av en banan",
+    "description": "Med Sovsäck i form av en banan får du en upplevelse som kombinerar humor och funktion. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 245.21,
+    "brand": "KnasFriluft",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl20.jpg",
+    "dateAdded": "2025-01-03T13:49:59Z"
+  },
+  {
+    "id": 21,
+    "name": "Myggspray med doft av grillkorv",
+    "description": "Det är svårt att förklara Myggspray med doft av grillkorv utan att le – men den fungerar faktiskt. En grill som inte bara handlar om maten utan också om gemenskapen runt den. Lätt att ta med och byggd för att klara många sommarkvällar utomhus.",
+    "price": 547.82,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl21.jpg",
+    "dateAdded": "2025-09-28T06:11:16Z"
+  },
+  {
+    "id": 22,
+    "name": "Kylväska som värmer",
+    "description": "Kylväska som värmer sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 173.83,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl22.jpg",
+    "dateAdded": "2025-04-25T15:53:39Z"
+  },
+  {
+    "id": 23,
+    "name": "Stegräknare för sovsäcken",
+    "description": "Med Stegräknare för sovsäcken får du en upplevelse som kombinerar humor och funktion. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 791.78,
+    "brand": "OutdoorOdd",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl23.jpg",
+    "dateAdded": "2025-02-14T06:21:35Z"
+  },
+  {
+    "id": 24,
+    "name": "Hopfällbar hängmatta av betong",
+    "description": "Hopfällbar hängmatta av betong tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 391.96,
+    "brand": "OutdoorOdd",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl24.jpg",
+    "dateAdded": "2025-08-06T15:23:47Z"
+  },
+  {
+    "id": 25,
+    "name": "Campingbord med inbyggd sandlåda",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Campingbord med inbyggd sandlåda är beviset på det. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 237.55,
+    "brand": "Skogstokig",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl25.jpg",
+    "dateAdded": "2025-03-01T15:59:49Z"
+  },
+  {
+    "id": 26,
+    "name": "Vandringsstav med selfiepinne",
+    "description": "Vandringsstav med selfiepinne tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 417.59,
+    "brand": "Skogstokig",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl26.jpg",
+    "dateAdded": "2025-03-18T05:52:19Z"
+  },
+  {
+    "id": 27,
+    "name": "Tält med fönsterhiss",
+    "description": "Det är svårt att förklara Tält med fönsterhiss utan att le – men den fungerar faktiskt. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 621.28,
+    "brand": "KnasFriluft",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl27.jpg",
+    "dateAdded": "2025-08-04T08:46:11Z"
+  },
+  {
+    "id": 28,
+    "name": "Vattenflaska med inbyggd mp3-spelare",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Vattenflaska med inbyggd mp3-spelare är beviset på det. En praktisk lösning för den törstige, men med en design som gör att man aldrig tröttnar på att prata om den. Passar lika bra för kaffe på morgonen som för vatten under vandringen.",
+    "price": 152.7,
+    "brand": "Wilderness WTF",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl28.jpg",
+    "dateAdded": "2025-08-16T00:05:42Z"
+  },
+  {
+    "id": 29,
+    "name": "Solhatt med solpaneler och USB",
+    "description": "Med Solhatt med solpaneler och USB får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 366.49,
+    "brand": "KnasFriluft",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl29.jpg",
+    "dateAdded": "2025-05-24T01:30:05Z"
+  },
+  {
+    "id": 30,
+    "name": "Portabel grill som drivs av handvev",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Portabel grill som drivs av handvev är beviset på det. En grill som inte bara handlar om maten utan också om gemenskapen runt den. Lätt att ta med och byggd för att klara många sommarkvällar utomhus.",
+    "price": 829.9,
+    "brand": "Wilderness WTF",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl30.jpg",
+    "dateAdded": "2025-08-19T06:43:09Z"
+  },
+  {
+    "id": 31,
+    "name": "Campingkudde med inbyggd väckarklocka",
+    "description": "Det är svårt att förklara Campingkudde med inbyggd väckarklocka utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 316.75,
+    "brand": "KnasFriluft",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl31.jpg",
+    "dateAdded": "2025-09-03T07:03:03Z"
+  },
+  {
+    "id": 32,
+    "name": "Termos som bara håller värmen i 5 minuter",
+    "description": "Termos som bara håller värmen i 5 minuter tar ditt friluftsliv i en helt ny riktning. En praktisk lösning för den törstige, men med en design som gör att man aldrig tröttnar på att prata om den. Passar lika bra för kaffe på morgonen som för vatten under vandringen.",
+    "price": 153.84,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl32.jpg",
+    "dateAdded": "2025-08-14T07:06:30Z"
+  },
+  {
+    "id": 33,
+    "name": "Stormkök med röststyrning",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Stormkök med röststyrning är beviset på det. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 242.8,
+    "brand": "KnasFriluft",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl33.jpg",
+    "dateAdded": "2025-06-12T00:40:42Z"
+  },
+  {
+    "id": 34,
+    "name": "Eldfast regnponcho",
+    "description": "Eldfast regnponcho sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 252.49,
+    "brand": "Skogstokig",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl34.jpg",
+    "dateAdded": "2025-02-28T06:47:01Z"
+  },
+  {
+    "id": 35,
+    "name": "Skosnören med GPS",
+    "description": "Skosnören med GPS sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 82.26,
+    "brand": "Fjällfån",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl35.jpg",
+    "dateAdded": "2025-07-31T13:54:01Z"
+  },
+  {
+    "id": 36,
+    "name": "Tältduk i genomskinlig plast",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Tältduk i genomskinlig plast är beviset på det. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 936.89,
+    "brand": "Fjällfån",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl36.jpg",
+    "dateAdded": "2025-01-28T19:40:21Z"
+  },
+  {
+    "id": 37,
+    "name": "Campingtofflor med dubbar",
+    "description": "Det är svårt att förklara Campingtofflor med dubbar utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 305.77,
+    "brand": "Wilderness WTF",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl37.jpg",
+    "dateAdded": "2025-07-19T11:25:18Z"
+  },
+  {
+    "id": 38,
+    "name": "Fällkniv som bara innehåller tandpetare",
+    "description": "Det är svårt att förklara Fällkniv som bara innehåller tandpetare utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 156.06,
+    "brand": "Wilderness WTF",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl38.jpg",
+    "dateAdded": "2025-05-28T12:24:48Z"
+  },
+  {
+    "id": 39,
+    "name": "Hopfällbar stubbe i plast",
+    "description": "Hopfällbar stubbe i plast tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 100.56,
+    "brand": "KnasFriluft",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl39.jpg",
+    "dateAdded": "2025-05-22T10:32:56Z"
+  },
+  {
+    "id": 40,
+    "name": "Sovsäck med inbyggd ficklampa på insidan",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Sovsäck med inbyggd ficklampa på insidan alltid uppmärksamhet. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 622.95,
+    "brand": "Skogstokig",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl40.jpg",
+    "dateAdded": "2025-08-26T16:11:46Z"
+  },
+  {
+    "id": 41,
+    "name": "Vandringsstrumpor med bluetooth",
+    "description": "Vandringsstrumpor med bluetooth sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 281.0,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl41.jpg",
+    "dateAdded": "2025-04-02T07:19:19Z"
+  },
+  {
+    "id": 42,
+    "name": "Portabel dass med inbyggd radio",
+    "description": "Portabel dass med inbyggd radio tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 387.21,
+    "brand": "Skogstokig",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl42.jpg",
+    "dateAdded": "2025-07-07T15:26:08Z"
+  },
+  {
+    "id": 43,
+    "name": "Fiskespö som också är paraply",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Fiskespö som också är paraply alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 149.92,
+    "brand": "Wilderness WTF",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl43.jpg",
+    "dateAdded": "2025-07-13T20:27:59Z"
+  },
+  {
+    "id": 44,
+    "name": "Uppblåsbar sovsäck",
+    "description": "Det är svårt att förklara Uppblåsbar sovsäck utan att le – men den fungerar faktiskt. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 751.31,
+    "brand": "Skogstokig",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl44.jpg",
+    "dateAdded": "2025-07-15T20:32:49Z"
+  },
+  {
+    "id": 45,
+    "name": "Campinggrill i form av en kaktus",
+    "description": "Det är svårt att förklara Campinggrill i form av en kaktus utan att le – men den fungerar faktiskt. En grill som inte bara handlar om maten utan också om gemenskapen runt den. Lätt att ta med och byggd för att klara många sommarkvällar utomhus.",
+    "price": 930.11,
+    "brand": "Skogstokig",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl45.jpg",
+    "dateAdded": "2025-02-22T21:01:59Z"
+  },
+  {
+    "id": 46,
+    "name": "Kompass som pekar mot närmaste snabbmatsrestaurang",
+    "description": "Kompass som pekar mot närmaste snabbmatsrestaurang tar ditt friluftsliv i en helt ny riktning. Tillverkad i robust material och med en design som väcker nyfikenhet. Även om riktningen kan vara oväntad ibland, ger den alltid äventyr och skratt på vägen.",
+    "price": 196.08,
+    "brand": "Fjällfån",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl46.jpg",
+    "dateAdded": "2025-03-23T13:14:43Z"
+  },
+  {
+    "id": 47,
+    "name": "Myggnät med broderade hål",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Myggnät med broderade hål alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 261.06,
+    "brand": "Wilderness WTF",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl47.jpg",
+    "dateAdded": "2025-02-25T03:32:49Z"
+  },
+  {
+    "id": 48,
+    "name": "Regnjacka i papper",
+    "description": "Det är svårt att förklara Regnjacka i papper utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 318.78,
+    "brand": "Fjällfån",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl48.jpg",
+    "dateAdded": "2025-03-25T11:25:19Z"
+  },
+  {
+    "id": 49,
+    "name": "Campingmugg i storlek XXL (20 liter)",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Campingmugg i storlek XXL (20 liter) alltid uppmärksamhet. En praktisk lösning för den törstige, men med en design som gör att man aldrig tröttnar på att prata om den. Passar lika bra för kaffe på morgonen som för vatten under vandringen.",
+    "price": 247.59,
+    "brand": "Skogstokig",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl49.jpg",
+    "dateAdded": "2025-06-13T22:38:44Z"
+  },
+  {
+    "id": 50,
+    "name": "Sovsäck med inbyggd projektor",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Sovsäck med inbyggd projektor är beviset på det. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 513.05,
+    "brand": "Fjällfån",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl50.jpg",
+    "dateAdded": "2025-07-08T16:59:56Z"
+  },
+  {
+    "id": 51,
+    "name": "Campingstol med inbyggd hårtork",
+    "description": "Campingstol med inbyggd hårtork tar ditt friluftsliv i en helt ny riktning. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 645.54,
+    "brand": "Fjällfån",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl51.jpg",
+    "dateAdded": "2025-01-09T15:11:03Z"
+  },
+  {
+    "id": 52,
+    "name": "Hopfällbar stubbe av glas",
+    "description": "Med Hopfällbar stubbe av glas får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 110.03,
+    "brand": "Wilderness WTF",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl52.jpg",
+    "dateAdded": "2025-06-15T20:26:39Z"
+  },
+  {
+    "id": 53,
+    "name": "Tält med doft av grillad kyckling",
+    "description": "Med Tält med doft av grillad kyckling får du en upplevelse som kombinerar humor och funktion. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 802.99,
+    "brand": "Wilderness WTF",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl53.jpg",
+    "dateAdded": "2025-07-29T22:21:00Z"
+  },
+  {
+    "id": 54,
+    "name": "Campingbestick i form av lego",
+    "description": "Campingbestick i form av lego tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 112.5,
+    "brand": "Fjällfån",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl54.jpg",
+    "dateAdded": "2025-08-02T11:12:38Z"
+  },
+  {
+    "id": 55,
+    "name": "Vandringskeps med drönarplatta",
+    "description": "Med Vandringskeps med drönarplatta får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 368.46,
+    "brand": "Fjällfån",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl55.jpg",
+    "dateAdded": "2025-01-17T12:28:39Z"
+  },
+  {
+    "id": 56,
+    "name": "Campingväska med hjul som inte rullar",
+    "description": "Med Campingväska med hjul som inte rullar får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 396.38,
+    "brand": "OutdoorOdd",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl56.jpg",
+    "dateAdded": "2025-09-12T20:48:18Z"
+  },
+  {
+    "id": 57,
+    "name": "Hängmatta i stål",
+    "description": "Hängmatta i stål sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 282.76,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl57.jpg",
+    "dateAdded": "2025-05-21T04:46:25Z"
+  },
+  {
+    "id": 58,
+    "name": "Tält i form av en igloo med AC",
+    "description": "Med Tält i form av en igloo med AC får du en upplevelse som kombinerar humor och funktion. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 833.7,
+    "brand": "Fjällfån",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl58.jpg",
+    "dateAdded": "2025-02-09T01:33:33Z"
+  },
+  {
+    "id": 59,
+    "name": "Fickkniv med bara saxar",
+    "description": "Med Fickkniv med bara saxar får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 75.9,
+    "brand": "Wilderness WTF",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl59.jpg",
+    "dateAdded": "2025-04-01T09:43:38Z"
+  },
+  {
+    "id": 60,
+    "name": "Campinglampa med inbyggd fläkt för att sprida mygg",
+    "description": "Med Campinglampa med inbyggd fläkt för att sprida mygg får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 71.48,
+    "brand": "Wilderness WTF",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl60.jpg",
+    "dateAdded": "2025-01-07T04:46:59Z"
+  },
+  {
+    "id": 61,
+    "name": "Stormtändare som bara fungerar i solsken",
+    "description": "Stormtändare som bara fungerar i solsken tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 443.34,
+    "brand": "KnasFriluft",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl61.jpg",
+    "dateAdded": "2025-07-30T04:17:52Z"
+  },
+  {
+    "id": 62,
+    "name": "Campingkudde fylld med popcorn",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Campingkudde fylld med popcorn är beviset på det. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 362.12,
+    "brand": "Wilderness WTF",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl62.jpg",
+    "dateAdded": "2025-01-18T10:07:31Z"
+  },
+  {
+    "id": 63,
+    "name": "Solcellsdriven pannlampa (som bara funkar på dagen)",
+    "description": "Med Solcellsdriven pannlampa (som bara funkar på dagen) får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 79.45,
+    "brand": "Wilderness WTF",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl63.jpg",
+    "dateAdded": "2025-09-01T22:45:19Z"
+  },
+  {
+    "id": 64,
+    "name": "Campingstol med inbyggd massagefunktion",
+    "description": "Det är svårt att förklara Campingstol med inbyggd massagefunktion utan att le – men den fungerar faktiskt. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 241.67,
+    "brand": "KnasFriluft",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl64.jpg",
+    "dateAdded": "2025-08-17T01:22:18Z"
+  },
+  {
+    "id": 65,
+    "name": "Uppblåsbar ryggsäck",
+    "description": "Med Uppblåsbar ryggsäck får du en upplevelse som kombinerar humor och funktion. Den här ryggsäcken är både funktionell och rolig. Den har gott om plats för packning och samtidigt ett utseende som gör att du garanterat blir igenkänd på leden.",
+    "price": 746.72,
+    "brand": "OutdoorOdd",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl65.jpg",
+    "dateAdded": "2025-01-16T19:26:56Z"
+  },
+  {
+    "id": 66,
+    "name": "Sovsäck i jeans",
+    "description": "Sovsäck i jeans sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 710.17,
+    "brand": "Wilderness WTF",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl66.jpg",
+    "dateAdded": "2025-09-16T18:47:17Z"
+  },
+  {
+    "id": 67,
+    "name": "Kompass som snurrar konstant",
+    "description": "Det är svårt att förklara Kompass som snurrar konstant utan att le – men den fungerar faktiskt. Tillverkad i robust material och med en design som väcker nyfikenhet. Även om riktningen kan vara oväntad ibland, ger den alltid äventyr och skratt på vägen.",
+    "price": 193.03,
+    "brand": "Wilderness WTF",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl67.jpg",
+    "dateAdded": "2025-08-12T01:25:12Z"
+  },
+  {
+    "id": 68,
+    "name": "Campingbord som kräver eluttag",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Campingbord som kräver eluttag alltid uppmärksamhet. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 446.13,
+    "brand": "KnasFriluft",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl68.jpg",
+    "dateAdded": "2025-08-03T05:07:32Z"
+  },
+  {
+    "id": 69,
+    "name": "Vandringsstav i glas",
+    "description": "Med Vandringsstav i glas får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 369.78,
+    "brand": "Wilderness WTF",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl69.jpg",
+    "dateAdded": "2025-06-06T04:03:35Z"
+  },
+  {
+    "id": 70,
+    "name": "Portabel dusch med 1 ml vattenkapacitet",
+    "description": "Det är svårt att förklara Portabel dusch med 1 ml vattenkapacitet utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 372.8,
+    "brand": "KnasFriluft",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl70.jpg",
+    "dateAdded": "2025-06-05T06:04:42Z"
+  },
+  {
+    "id": 71,
+    "name": "Campingtält i storlek dockhus",
+    "description": "Campingtält i storlek dockhus tar ditt friluftsliv i en helt ny riktning. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 1152.75,
+    "brand": "Wilderness WTF",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl71.jpg",
+    "dateAdded": "2025-02-18T06:24:30Z"
+  },
+  {
+    "id": 72,
+    "name": "Kylväska som smälter isen snabbare",
+    "description": "Det är svårt att förklara Kylväska som smälter isen snabbare utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 77.6,
+    "brand": "Fjällfån",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl72.jpg",
+    "dateAdded": "2025-01-04T09:15:55Z"
+  },
+  {
+    "id": 73,
+    "name": "Campinghatt som är ett miniväxthus",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Campinghatt som är ett miniväxthus alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 294.56,
+    "brand": "Fjällfån",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl73.jpg",
+    "dateAdded": "2025-05-24T18:29:42Z"
+  },
+  {
+    "id": 74,
+    "name": "Hopfällbar stubbe med LED-belysning",
+    "description": "Med Hopfällbar stubbe med LED-belysning får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 301.6,
+    "brand": "Fjällfån",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl74.jpg",
+    "dateAdded": "2025-01-03T18:04:45Z"
+  },
+  {
+    "id": 75,
+    "name": "Regnponcho med inbyggd spegel",
+    "description": "Regnponcho med inbyggd spegel tar ditt friluftsliv i en helt ny riktning. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 338.89,
+    "brand": "KnasFriluft",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl75.jpg",
+    "dateAdded": "2025-04-29T17:18:35Z"
+  },
+  {
+    "id": 76,
+    "name": "Campingtofflor som visslar",
+    "description": "Campingtofflor som visslar sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 129.59,
+    "brand": "Fjällfån",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl76.jpg",
+    "dateAdded": "2025-07-25T05:55:21Z"
+  },
+  {
+    "id": 77,
+    "name": "Sovsäck som luktar grillad korv",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Sovsäck som luktar grillad korv är beviset på det. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 415.74,
+    "brand": "OutdoorOdd",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl77.jpg",
+    "dateAdded": "2025-02-28T23:17:30Z"
+  },
+  {
+    "id": 78,
+    "name": "Portabel myggfälla som lockar björnar",
+    "description": "Med Portabel myggfälla som lockar björnar får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 150.61,
+    "brand": "Skogstokig",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl78.jpg",
+    "dateAdded": "2025-01-16T19:09:32Z"
+  },
+  {
+    "id": 79,
+    "name": "Vandringsryggsäck i sammet",
+    "description": "Med Vandringsryggsäck i sammet får du en upplevelse som kombinerar humor och funktion. Den här ryggsäcken är både funktionell och rolig. Den har gott om plats för packning och samtidigt ett utseende som gör att du garanterat blir igenkänd på leden.",
+    "price": 566.3,
+    "brand": "Skogstokig",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl79.jpg",
+    "dateAdded": "2025-03-18T11:14:49Z"
+  },
+  {
+    "id": 80,
+    "name": "Campinggrill som är en engångständare",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Campinggrill som är en engångständare alltid uppmärksamhet. En grill som inte bara handlar om maten utan också om gemenskapen runt den. Lätt att ta med och byggd för att klara många sommarkvällar utomhus.",
+    "price": 877.03,
+    "brand": "OutdoorOdd",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl80.jpg",
+    "dateAdded": "2025-04-24T05:53:35Z"
+  },
+  {
+    "id": 81,
+    "name": "Hopfällbar stubbe i betong",
+    "description": "Med Hopfällbar stubbe i betong får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 482.97,
+    "brand": "KnasFriluft",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl81.jpg",
+    "dateAdded": "2025-04-05T10:20:43Z"
+  },
+  {
+    "id": 82,
+    "name": "Campingmugg som läcker",
+    "description": "Det är svårt att förklara Campingmugg som läcker utan att le – men den fungerar faktiskt. En praktisk lösning för den törstige, men med en design som gör att man aldrig tröttnar på att prata om den. Passar lika bra för kaffe på morgonen som för vatten under vandringen.",
+    "price": 349.18,
+    "brand": "OutdoorOdd",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl82.jpg",
+    "dateAdded": "2025-02-03T03:02:59Z"
+  },
+  {
+    "id": 83,
+    "name": "Sovsäck med inbyggd ficka för pizza",
+    "description": "Sovsäck med inbyggd ficka för pizza sticker ut från mängden och är mer än bara en pryl – det är en konversation i sig. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 629.29,
+    "brand": "OutdoorOdd",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl83.jpg",
+    "dateAdded": "2025-06-26T08:00:58Z"
+  },
+  {
+    "id": 84,
+    "name": "Kompass med felstavade väderstreck",
+    "description": "Med Kompass med felstavade väderstreck får du en upplevelse som kombinerar humor och funktion. Tillverkad i robust material och med en design som väcker nyfikenhet. Även om riktningen kan vara oväntad ibland, ger den alltid äventyr och skratt på vägen.",
+    "price": 94.17,
+    "brand": "Fjällfån",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl84.jpg",
+    "dateAdded": "2025-03-03T11:31:27Z"
+  },
+  {
+    "id": 85,
+    "name": "Vandringskängor med hjul",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Vandringskängor med hjul alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 486.19,
+    "brand": "Fjällfån",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl85.jpg",
+    "dateAdded": "2025-03-01T09:01:14Z"
+  },
+  {
+    "id": 86,
+    "name": "Campingstol i origami",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Campingstol i origami är beviset på det. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 245.81,
+    "brand": "Fjällfån",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl86.jpg",
+    "dateAdded": "2025-07-02T20:33:12Z"
+  },
+  {
+    "id": 87,
+    "name": "Tält med rökfylld effekt",
+    "description": "Med Tält med rökfylld effekt får du en upplevelse som kombinerar humor och funktion. Ett tält som fungerar precis som vilket tält som helst, men som med sin speciella konstruktion blir ett minne för livet. Lätt att sätta upp och tillräckligt robust för svenska sommarkvällar.",
+    "price": 711.68,
+    "brand": "Wilderness WTF",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl87.jpg",
+    "dateAdded": "2025-06-11T18:42:22Z"
+  },
+  {
+    "id": 88,
+    "name": "Vattenflaska som bara rymmer 10 ml",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Vattenflaska som bara rymmer 10 ml är beviset på det. En praktisk lösning för den törstige, men med en design som gör att man aldrig tröttnar på att prata om den. Passar lika bra för kaffe på morgonen som för vatten under vandringen.",
+    "price": 231.31,
+    "brand": "Fjällfån",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl88.jpg",
+    "dateAdded": "2025-05-28T00:21:44Z"
+  },
+  {
+    "id": 89,
+    "name": "Campingväska i form av en TV",
+    "description": "Med Campingväska i form av en TV får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 195.6,
+    "brand": "OutdoorOdd",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl89.jpg",
+    "dateAdded": "2025-04-19T16:08:59Z"
+  },
+  {
+    "id": 90,
+    "name": "Multiverktyg med bara kam",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Multiverktyg med bara kam alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 334.34,
+    "brand": "KnasFriluft",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl90.jpg",
+    "dateAdded": "2025-09-20T19:38:13Z"
+  },
+  {
+    "id": 91,
+    "name": "Campingbord i miniatyr",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Campingbord i miniatyr är beviset på det. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 270.25,
+    "brand": "OutdoorOdd",
+    "category": "Survival",
+    "imageUrl": "https://example.com/knaspryl91.jpg",
+    "dateAdded": "2025-01-11T09:27:07Z"
+  },
+  {
+    "id": 92,
+    "name": "Sovsäck i plastfolie",
+    "description": "Med Sovsäck i plastfolie får du en upplevelse som kombinerar humor och funktion. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 284.26,
+    "brand": "Skogstokig",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl92.jpg",
+    "dateAdded": "2025-02-10T00:14:53Z"
+  },
+  {
+    "id": 93,
+    "name": "Vandringskeps med inbyggd fläkt",
+    "description": "Med Vandringskeps med inbyggd fläkt får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 397.87,
+    "brand": "Wilderness WTF",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl93.jpg",
+    "dateAdded": "2025-01-21T16:15:42Z"
+  },
+  {
+    "id": 94,
+    "name": "Campingstol i form av enhörning",
+    "description": "Campingstol i form av enhörning tar ditt friluftsliv i en helt ny riktning. Hopfällbar, lätt och alltid ett samtalsämne. Den passar perfekt för campingresor, festivaler eller bara som en knasig detalj på altanen hemma.",
+    "price": 641.87,
+    "brand": "Wilderness WTF",
+    "category": "Hiking",
+    "imageUrl": "https://example.com/knaspryl94.jpg",
+    "dateAdded": "2025-01-27T01:47:44Z"
+  },
+  {
+    "id": 95,
+    "name": "Hopfällbar stubbe i tyg",
+    "description": "Vare sig du är ute på fjället eller i trädgården så väcker Hopfällbar stubbe i tyg alltid uppmärksamhet. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 83.91,
+    "brand": "Fjällfån",
+    "category": "Picnic",
+    "imageUrl": "https://example.com/knaspryl95.jpg",
+    "dateAdded": "2025-08-07T04:02:08Z"
+  },
+  {
+    "id": 96,
+    "name": "Kylväska som spelar musik",
+    "description": "Det är svårt att förklara Kylväska som spelar musik utan att le – men den fungerar faktiskt. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 302.16,
+    "brand": "Skogstokig",
+    "category": "Other",
+    "imageUrl": "https://example.com/knaspryl96.jpg",
+    "dateAdded": "2025-03-31T17:18:45Z"
+  },
+  {
+    "id": 97,
+    "name": "Campinglampa som bara blinkar i rött",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Campinglampa som bara blinkar i rött är beviset på det. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 299.47,
+    "brand": "KnasFriluft",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl97.jpg",
+    "dateAdded": "2025-01-25T10:10:05Z"
+  },
+  {
+    "id": 98,
+    "name": "Portabel grill i form av en bok",
+    "description": "Portabel grill i form av en bok tar ditt friluftsliv i en helt ny riktning. En grill som inte bara handlar om maten utan också om gemenskapen runt den. Lätt att ta med och byggd för att klara många sommarkvällar utomhus.",
+    "price": 251.26,
+    "brand": "KnasFriluft",
+    "category": "Camping",
+    "imageUrl": "https://example.com/knaspryl98.jpg",
+    "dateAdded": "2025-05-22T02:43:00Z"
+  },
+  {
+    "id": 99,
+    "name": "Sovsäck som inte går att stänga",
+    "description": "Friluftsliv behöver inte vara tråkigt, och Sovsäck som inte går att stänga är beviset på det. Den här sovsäcken erbjuder inte bara värme utan också en unik design som gör att du aldrig blandas ihop med någon annans packning. Perfekt för dig som vill kombinera komfort med ett udda inslag av humor vid lägerelden.",
+    "price": 360.24,
+    "brand": "Skogstokig",
+    "category": "Climbing",
+    "imageUrl": "https://example.com/knaspryl99.jpg",
+    "dateAdded": "2025-05-29T16:23:23Z"
+  },
+  {
+    "id": 100,
+    "name": "Vandringsstav med paraply",
+    "description": "Med Vandringsstav med paraply får du en upplevelse som kombinerar humor och funktion. En produkt som balanserar mellan funktionalitet och fantasi. Den fyller sin uppgift, men framför allt gör den din packning mycket roligare.",
+    "price": 314.64,
+    "brand": "KnasFriluft",
+    "category": "Fishing",
+    "imageUrl": "https://example.com/knaspryl100.jpg",
+    "dateAdded": "2025-07-20T13:55:01Z"
+  }
+]

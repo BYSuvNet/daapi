@@ -61,7 +61,8 @@ app.MapPost("/api/products", async Task<Results<Created<Product>, ValidationProb
         Price = dto.Price,
         Brand = dto.Brand,
         Category = dto.Category,
-        ImageUrl = dto.ImageUrl
+        ImageUrl = dto.ImageUrl,
+        DateAdded = DateTime.UtcNow
     };
     db.Products.Add(product);
     await db.SaveChangesAsync();
@@ -127,35 +128,6 @@ app.MapPost("/api/customers", async Task<Results<Created<Customer>, ValidationPr
     db.Customers.Add(c);
     await db.SaveChangesAsync();
     return TypedResults.Created($"/api/customers/{c.Id}", c);
-});
-
-app.MapPut("/api/customers/{id:int}", async Task<Results<NoContent, NotFound, ValidationProblem>>
-    (int id, CustomerUpdateDto dto, AppDb db) =>
-{
-    var validationErrors = Validate(dto);
-    if (validationErrors.Count > 0)
-        return TypedResults.ValidationProblem(validationErrors);
-
-    var c = await db.Customers.FindAsync(id);
-    if (c is null) return TypedResults.NotFound();
-
-    c.Name = dto.Name;
-    c.Email = dto.Email;
-    c.Phone = dto.Phone;
-    c.Address = dto.Address;
-
-    await db.SaveChangesAsync();
-    return TypedResults.NoContent();
-});
-
-app.MapDelete("/api/customers/{id:int}", async Task<Results<NoContent, NotFound>> (int id, AppDb db) =>
-{
-    var c = await db.Customers.FindAsync(id);
-    if (c is null) return TypedResults.NotFound();
-
-    db.Customers.Remove(c);
-    await db.SaveChangesAsync();
-    return TypedResults.NoContent();
 });
 
 // --------------------- ORDERS ---------------------
@@ -266,5 +238,8 @@ static Dictionary<string, string[]> Validate<T>(T instance)
     }
     return errors;
 }
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.Run();

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Endpoints</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 0.5em 0; }
+        code { background: #f4f4f4; padding: 0.2em 0.4em; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Dataanalys API v1</h1>
+    <h2>Tillgängliga Endpoints</h1>
+    <ul>
+        <li>
+            <strong>Hämta alla produkter:</strong>
+            <code>GET /api/products</code>
+        </li>
+        <li>
+            <strong>Get User by ID:</strong>
+            <code>GET /api/users/{id}</code>
+        </li>
+        <li>
+            <strong>Create User:</strong>
+            <code>POST /api/users</code>
+        </li>
+        <li>
+            <strong>Update User:</strong>
+            <code>PUT /api/users/{id}</code>
+        </li>
+        <li>
+            <strong>Delete User:</strong>
+            <code>DELETE /api/users/{id}</code>
+        </li>
+    </ul>
+
+    <h2>Senaste produkter</h2>
+    <ul id="latest-products"></ul>
+    <script>
+    async function fetchAndDisplayProducts() {
+        try {
+            const res = await fetch('https://www.suvnet.se/api/products');
+            if (!res.ok) throw new Error('Network response was not ok');
+            const products = await res.json();
+            // Sort by dateAdded descending
+            products.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+            const latest = products.slice(0, 10);
+            const ul = document.getElementById('latest-products');
+            ul.innerHTML = '';
+            latest.forEach(p => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <strong>${p.name}</strong> (${p.brand})<br>
+                    <small>${new Date(p.dateAdded).toLocaleString()}</small><br>
+                    <span>${p.description}</span><br>
+                    <em>${p.price.toFixed(2)} kr</em>
+                `;
+                ul.appendChild(li);
+            });
+        } catch (e) {
+            document.getElementById('latest-products').innerHTML = '<li>Kunde inte hämta produkter.</li>';
+        }
+    }
+    fetchAndDisplayProducts();
+    setInterval(fetchAndDisplayProducts, 10000);
+    </script>
+
+</body>
+</html>
