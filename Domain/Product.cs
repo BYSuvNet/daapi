@@ -12,5 +12,6 @@ public class Product
     public string? Category { get; set; }
     [Url]
     public string? ImageUrl { get; set; }
+    public string? Url { get; set; }
     public DateTime DateAdded { get; set; } = DateTime.UtcNow;
 }
