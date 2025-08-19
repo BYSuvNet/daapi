@@ -123,7 +123,8 @@ app.MapPost("/api/customers", async Task<Results<Created<Customer>, ValidationPr
         Name = dto.Name,
         Email = dto.Email,
         Phone = dto.Phone,
-        Address = dto.Address
+        Address = dto.Address,
+        BirthDate = dto.BirthDate
     };
     db.Customers.Add(c);
     await db.SaveChangesAsync();
