@@ -19,3 +19,9 @@ public record ProductUpdateDto(
     string? Category,
     [property: Url] string? ImageUrl
 );
+
+public record ProductReviewCreateDto(
+    [property: Required] int CustomerId,
+    [property: Required, Range(1, 5)] int Rating,
+    string? Comment
+);
