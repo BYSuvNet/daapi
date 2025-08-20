@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,9 +38,22 @@ app.UseCors("DevCors");
 
 // --------------------- PRODUCTS ---------------------
 
-app.MapGet("/api/products", async (AppDb db) =>
-    await db.Products.AsNoTracking().ToListAsync())
-   .WithName("GetProducts");
+//GET all products as JSON or CSV
+app.MapGet("/api/products", async (AppDb db, string format = "json") =>
+{
+    var products = await db.Products.AsNoTracking().ToListAsync();
+
+    if (string.Equals(format, "csv", StringComparison.OrdinalIgnoreCase))
+    {
+        var csv = "Id,Name,Description,Price,Brand,Category,ImageUrl,DateAdded\n" +
+          string.Join("\n", products.Select(p =>
+              $"{p.Id},{CsvEscape(p.Name)},{CsvEscape(p.Description!)},{CsvNum(p.Price)},{CsvEscape(p.Brand!)},{CsvEscape(p.Category!)},{CsvEscape(p.ImageUrl!)},{p.DateAdded.ToString("O", CultureInfo.InvariantCulture)}"));
+
+        return Results.File(new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(csv)), "text/csv", "products.csv");
+    }
+
+    return Results.Ok(products);
+}).WithName("GetProducts");
 
 app.MapGet("/api/products/{id:int}", async Task<Results<Ok<Product>, NotFound>> (int id, AppDb db) =>
 {
@@ -220,6 +234,67 @@ app.MapPatch("/api/orders/{id:int}/status", async Task<Results<NoContent, NotFou
     return TypedResults.NoContent();
 });
 
+// REVIEWS
+app.MapGet("/api/products/reviews", async (AppDb db) =>
+    await db.Reviews
+        .AsNoTracking()
+        .ToListAsync());
+
+app.MapGet("/api/products/{productId:int}/reviews", async Task<Results<Ok<List<ProductReview>>, NotFound>> (int productId, AppDb db) =>
+{
+    var reviews = await db.Reviews
+        .Where(r => r.ProductId == productId)
+        .AsNoTracking()
+        .ToListAsync();
+
+    if (reviews.Count == 0)
+        return TypedResults.NotFound();
+
+    return TypedResults.Ok(reviews);
+});
+
+app.MapPost("/api/products/{productId:int}/reviews", async Task<Results<Created<ProductReview>, ValidationProblem, NotFound>>
+    (int productId, ProductReviewCreateDto dto, AppDb db) =>
+{
+    var validationErrors = Validate(dto);
+    if (validationErrors.Count > 0)
+        return TypedResults.ValidationProblem(validationErrors);
+
+    var product = await db.Products.FindAsync(productId);
+    if (product is null) return TypedResults.NotFound();
+
+    var review = new ProductReview
+    {
+        ProductId = productId,
+        CustomerId = dto.CustomerId,
+        Rating = dto.Rating,
+        Comment = dto.Comment,
+        DateAdded = DateTime.UtcNow
+    };
+
+    db.Reviews.Add(review);
+    await db.SaveChangesAsync();
+    return TypedResults.Created($"/api/products/{productId}/reviews/{review.Id}", review);
+});
+
+//DELETE A REVIEW (REQUIRES AN API-KEY FROM THE HEADER)
+app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}", async Task<Results<NoContent, NotFound>>
+    (int productId, int reviewId, AppDb db, HttpContext httpContext) =>
+{
+    //Kolla om rätt api-nyckel finns i headern
+    if (!httpContext.Request.Headers.TryGetValue("key", out var apiKey) || apiKey != "qwerty123456")
+        return TypedResults.NotFound();
+
+    var review = await db.Reviews
+        .FirstOrDefaultAsync(r => r.ProductId == productId && r.Id == reviewId);
+
+    if (review is null) return TypedResults.NotFound();
+
+    db.Reviews.Remove(review);
+    await db.SaveChangesAsync();
+    return TypedResults.NoContent();
+}).RequireAuthorization("ApiKey"); // Requires an API key in the header
+
 // Hjälpare för data annotations
 static Dictionary<string, string[]> Validate<T>(T instance)
 {
@@ -244,3 +319,19 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.Run();
+
+static string CsvEscape(string field)
+{
+    if (field == null) return "";
+    // Dubbelcitat inne i texten ersätts med två dubbla citat
+    var needsQuotes = field.Contains(',') || field.Contains('"') || field.Contains('\n') || field.Contains('\r');
+    var escaped = field.Replace("\"", "\"\"");
+    return needsQuotes ? $"\"{escaped}\"" : escaped;
+}
+
+static string CsvNum(decimal n) =>
+    n.ToString(CultureInfo.InvariantCulture);           // 398.78
+
+// Om du har double/float också:
+// static string CsvNum(double n) =>
+//     n.ToString("G", System.Globalization.CultureInfo.InvariantCulture);
