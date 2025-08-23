@@ -278,12 +278,13 @@ app.MapPost("/api/products/{productId:int}/reviews", async Task<Results<Created<
 });
 
 //DELETE A REVIEW (REQUIRES AN API-KEY FROM THE HEADER)
-app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}", async Task<Results<NoContent, NotFound>>
+app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}",
+    async Task<Results<NoContent, NotFound, UnauthorizedHttpResult>>
     (int productId, int reviewId, AppDb db, HttpContext httpContext) =>
 {
-    //Kolla om rätt api-nyckel finns i headern
-    if (!httpContext.Request.Headers.TryGetValue("key", out var apiKey) || apiKey != "qwerty123456")
-        return TypedResults.NotFound();
+    // Kolla om rätt api-nyckel finns i headern
+    if (!httpContext.Request.Headers.TryGetValue("X-Api-Key", out var apiKey) || apiKey != "qwerty123456")
+        return TypedResults.Unauthorized(); // <-- här ändrat
 
     var review = await db.Reviews
         .FirstOrDefaultAsync(r => r.ProductId == productId && r.Id == reviewId);
@@ -293,7 +294,26 @@ app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}", async Task
     db.Reviews.Remove(review);
     await db.SaveChangesAsync();
     return TypedResults.NoContent();
-}).RequireAuthorization("ApiKey"); // Requires an API key in the header
+});
+
+
+// //DELETE A REVIEW (REQUIRES AN API-KEY FROM THE HEADER)
+// app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}", async Task<Results<NoContent, NotFound>>
+//     (int productId, int reviewId, AppDb db, HttpContext httpContext) =>
+// {
+//     //Kolla om rätt api-nyckel finns i headern
+//     if (!httpContext.Request.Headers.TryGetValue("key", out var apiKey) || apiKey != "qwerty123456")
+//         return TypedResults.NotFound();
+
+//     var review = await db.Reviews
+//         .FirstOrDefaultAsync(r => r.ProductId == productId && r.Id == reviewId);
+
+//     if (review is null) return TypedResults.NotFound();
+
+//     db.Reviews.Remove(review);
+//     await db.SaveChangesAsync();
+//     return TypedResults.NoContent();
+// }).RequireAuthorization("ApiKey"); // Requires an API key in the header
 
 // Hjälpare för data annotations
 static Dictionary<string, string[]> Validate<T>(T instance)
