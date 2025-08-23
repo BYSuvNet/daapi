@@ -196,9 +196,7 @@ app.MapPost("/api/orders", async Task<Results<Created<Order>, ValidationProblem,
     var order = new Order
     {
         CustomerId = customer.Id,
-        CustomerName = customer.Name,
-        CustomerEmail = customer.Email,
-        OrderDate = DateTime.UtcNow
+        OrderDateUtc = DateTime.UtcNow
     };
 
     foreach (var i in dto.Items)
