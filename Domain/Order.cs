@@ -1,5 +1,6 @@
-// Models/Order.cs
 using System.ComponentModel.DataAnnotations;
+
+namespace DaApi.Domain;
 
 public class Order
 {
@@ -7,15 +8,11 @@ public class Order
     public DateTime OrderDateUtc { get; set; } = DateTime.UtcNow;
 
     public int? CustomerId { get; set; }     // intern användare (om inloggad)
-    public string? ClientId { get; set; }   // first-party cookie / GA4 user_pseudo_id
-    public string? SessionId { get; set; }  // sessions-id för besöket då ordern lades
-
     public string Currency { get; set; } = "SEK";
     public decimal TotalAmount => Items.Sum(i => i.Price * i.Quantity);
     public List<OrderItem> Items { get; set; } = new();
     public OrderStatus Status { get; set; } = OrderStatus.Pending;
-
-    public ICollection<OrderAttribution> Attributions { get; set; } = [];
+    public List<OrderItem> ReturnedItems { get; set; } = [];
 }
 
 public enum OrderStatus

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using DaApi.Domain;
 
 public class ProductReview
 {

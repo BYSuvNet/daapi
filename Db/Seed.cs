@@ -1,6 +1,7 @@
 // Data/DbSeed.cs
 using System.Globalization;
 using System.Text.Json;
+using DaApi.Domain;
 
 public class DbSeed
 {

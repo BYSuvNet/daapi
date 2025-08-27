@@ -1,4 +1,5 @@
 // Program.cs
+using DaApi.Domain;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
