@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using DaApi.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -164,59 +165,57 @@ app.MapGet("/api/orders/{id:int}", async Task<Results<Ok<Order>, NotFound>> (int
 });
 
 // Skapa order
-app.MapPost("/api/orders", async Task<Results<Created<Order>, ValidationProblem, NotFound>>
-    (OrderCreateDto dto, AppDb db) =>
-{
-    // Validera DTO
-    var validationErrors = Validate(dto);
-    if (validationErrors.Count > 0)
-        return TypedResults.ValidationProblem(validationErrors);
+// app.MapPost("/api/orders", async Task<Results<Created<Order>, ValidationProblem, NotFound>>
+//     (OrderCreateDto dto, AppDb db) =>
+// {
+//     // Validera DTO
+//     var validationErrors = Validate(dto);
+//     if (validationErrors.Count > 0)
+//         return TypedResults.ValidationProblem(validationErrors);
 
-    // Kontrollera kund
-    var customer = await db.Customers.FindAsync(dto.CustomerId);
-    if (customer is null) return TypedResults.NotFound();
+//     // Kontrollera kund
+//     var customer = await db.Customers.FindAsync(dto.CustomerId);
+//     if (customer is null) return TypedResults.NotFound();
 
-    // Hämta produkter som ingår
-    var productIds = dto.Items.Select(i => i.ProductId).Distinct().ToList();
-    var products = await db.Products
-        .Where(p => productIds.Contains(p.Id))
-        .ToDictionaryAsync(p => p.Id);
+//     // Hämta produkter som ingår
+//     var productIds = dto.Items.Select(i => i.ProductId).Distinct().ToList();
+//     var products = await db.Products
+//         .Where(p => productIds.Contains(p.Id))
+//         .ToDictionaryAsync(p => p.Id);
 
-    // Säkerställ att alla produkter finns
-    var missing = productIds.Where(id => !products.ContainsKey(id)).ToList();
-    if (missing.Any())
-    {
-        var err = new Dictionary<string, string[]>
-        {
-            ["Items"] = new[] { $"Unknown ProductId(s): {string.Join(",", missing)}" }
-        };
-        return TypedResults.ValidationProblem(err);
-    }
+//     // Säkerställ att alla produkter finns
+//     var missing = productIds.Where(id => !products.ContainsKey(id)).ToList();
+//     if (missing.Any())
+//     {
+//         var err = new Dictionary<string, string[]>
+//         {
+//             ["Items"] = new[] { $"Unknown ProductId(s): {string.Join(",", missing)}" }
+//         };
+//         return TypedResults.ValidationProblem(err);
+//     }
 
-    var order = new Order
-    {
-        CustomerId = customer.Id,
-        CustomerName = customer.Name,
-        CustomerEmail = customer.Email,
-        OrderDate = DateTime.UtcNow
-    };
+//     var order = new Order
+//     {
+//         CustomerId = customer.Id,
+//         OrderDateUtc = DateTime.UtcNow
+//     };
 
-    foreach (var i in dto.Items)
-    {
-        var product = products[i.ProductId];
-        order.Items.Add(new OrderItem
-        {
-            ProductId = product.Id,
-            Quantity = i.Quantity,
-            Price = product.Price // fryser priset vid ordertillfället
-        });
-    }
+//     foreach (var i in dto.Items)
+//     {
+//         var product = products[i.ProductId];
+//         order.Items.Add(new OrderItem
+//         {
+//             ProductId = product.Id,
+//             Quantity = i.Quantity,
+//             Price = product.Price // fryser priset vid ordertillfället
+//         });
+//     }
 
-    db.Orders.Add(order);
-    await db.SaveChangesAsync();
+//     db.Orders.Add(order);
+//     await db.SaveChangesAsync();
 
-    return TypedResults.Created($"/api/orders/{order.Id}", order);
-});
+//     return TypedResults.Created($"/api/orders/{order.Id}", order);
+// });
 
 // Uppdatera orderstatus (t.ex. markera som Shipped/Delivered/Cancelled)
 app.MapPatch("/api/orders/{id:int}/status", async Task<Results<NoContent, NotFound, ValidationProblem>>

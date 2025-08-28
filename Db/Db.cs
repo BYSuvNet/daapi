@@ -1,5 +1,5 @@
-// Data/AppDb.cs
 using Microsoft.EntityFrameworkCore;
+using DaApi.Domain;
 
 public class AppDb : DbContext
 {

@@ -1,5 +1,6 @@
-// Dtos/OrderDtos.cs
 using System.ComponentModel.DataAnnotations;
+
+using DaApi.Domain;
 
 public record OrderItemCreateDto(
     [property: Required] int ProductId,

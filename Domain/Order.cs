@@ -1,26 +1,15 @@
-// Models/Order.cs
 using System.ComponentModel.DataAnnotations;
+
+namespace DaApi.Domain;
 
 public class Order
 {
     public int Id { get; set; }
-
-    [Required]
-    public int CustomerId { get; set; }
-
-    // Denormaliseras för bekvämlighet (lagras vid ordertillfället)
-    [Required, MinLength(1)]
-    public string CustomerName { get; set; } = "";
-
-    [Required, EmailAddress]
-    public string CustomerEmail { get; set; } = "";
-
-    public DateTime OrderDate { get; set; } = DateTime.UtcNow;
-
-    public List<OrderItem> Items { get; set; } = new();
-
+    public DateTime OrderDateUtc { get; set; } = DateTime.UtcNow;
+    public int? CustomerId { get; set; }     // intern användare (om inloggad)
+    public string Currency { get; set; } = "SEK";
     public decimal TotalAmount => Items.Sum(i => i.Price * i.Quantity);
-
+    public List<OrderItem> Items { get; set; } = new();
     public OrderStatus Status { get; set; } = OrderStatus.Pending;
 }
 
