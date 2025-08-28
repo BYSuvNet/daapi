@@ -38,12 +38,10 @@ public class DbSeed
             var order = new Order
             {
                 CustomerId = customer.Id,
-                CustomerName = customer.Name,
-                CustomerEmail = customer.Email,
-                OrderDate = DateTime.UtcNow,
+                OrderDateUtc = DateTime.UtcNow,
                 Items = new List<OrderItem>
                 {
-                    new OrderItem { ProductId = p1.Id, Quantity = 2, Price = p1.Price }
+                    new() { ProductId = p1.Id, Quantity = 2, Price = p1.ListPriceExVat }
                 }
             };
 
