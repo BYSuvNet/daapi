@@ -48,7 +48,7 @@ app.MapGet("/api/products", async (AppDb db, string format = "json") =>
     {
         var csv = "Id,Name,Description,Price,Brand,Category,ImageUrl,DateAdded\n" +
           string.Join("\n", products.Select(p =>
-              $"{p.Id},{CsvEscape(p.Name)},{CsvEscape(p.Description!)},{CsvNum(p.Price)},{CsvEscape(p.Brand!)},{CsvEscape(p.Category!)},{CsvEscape(p.ImageUrl!)},{p.DateAdded.ToString("O", CultureInfo.InvariantCulture)}"));
+              $"{p.Id},{CsvEscape(p.Name)},{CsvEscape(p.Description!)},{CsvNum(p.ListPriceExVat)},{CsvEscape(p.Brand!)},{CsvEscape(p.Category!)}"));
 
         return Results.File(new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(csv)), "text/csv", "products.csv");
     }
@@ -73,11 +73,9 @@ app.MapPost("/api/products", async Task<Results<Created<Product>, ValidationProb
     {
         Name = dto.Name,
         Description = dto.Description,
-        Price = dto.Price,
+        ListPriceExVat = dto.Price,
         Brand = dto.Brand,
-        Category = dto.Category,
-        ImageUrl = dto.ImageUrl,
-        DateAdded = DateTime.UtcNow
+        Category = dto.Category
     };
     db.Products.Add(product);
     await db.SaveChangesAsync();
@@ -96,10 +94,9 @@ app.MapPut("/api/products/{id:int}", async Task<Results<NoContent, NotFound, Val
 
     p.Name = dto.Name;
     p.Description = dto.Description;
-    p.Price = dto.Price;
+    p.ListPriceExVat = dto.Price;
     p.Brand = dto.Brand;
     p.Category = dto.Category;
-    p.ImageUrl = dto.ImageUrl;
 
     await db.SaveChangesAsync();
     return TypedResults.NoContent();
@@ -207,7 +204,7 @@ app.MapPost("/api/orders", async Task<Results<Created<Order>, ValidationProblem,
         {
             ProductId = product.Id,
             Quantity = i.Quantity,
-            Price = product.Price // fryser priset vid ordertillfället
+            Price = product.ListPriceExVat // fryser priset vid ordertillfället
         });
     }
 
