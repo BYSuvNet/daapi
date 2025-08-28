@@ -12,7 +12,7 @@ public class Order
     public decimal TotalAmount => Items.Sum(i => i.Price * i.Quantity);
     public List<OrderItem> Items { get; set; } = new();
     public OrderStatus Status { get; set; } = OrderStatus.Pending;
-    public List<OrderItem> ReturnedItems { get; set; } = [];
+    // public List<OrderItem> ReturnedItems { get; set; } = [];
 }
 
 public enum OrderStatus
