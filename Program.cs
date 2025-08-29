@@ -7,6 +7,14 @@ using DaApi.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddOutputCache(options =>
+{
+    options.AddPolicy("OrdersCache", b => b
+        .Expire(TimeSpan.FromMinutes(120))                 // TTL
+        .SetVaryByQuery("from", "to", "page", "pageSize")   // unik cache per kombination
+        .Tag("orders"));                                  // tag för invalidation
+});
+
 builder.Services.AddDbContext<AppDb>(opt =>
     opt.UseInMemoryDatabase("products-db"));
 
@@ -148,12 +156,44 @@ app.MapPost("/api/customers", async Task<Results<Created<Customer>, ValidationPr
 
 // --------------------- ORDERS ---------------------
 
-// Hämta alla orders
-app.MapGet("/api/orders", async (AppDb db) =>
-    await db.Orders
+app.MapGet("/api/orders", async (
+    AppDb db,
+    HttpContext http,
+    DateTime? from,
+    DateTime? to,
+    int? page,
+    int? pageSize
+) =>
+{
+    var query = db.Orders
         .AsNoTracking()
         .Include(o => o.Items)
-        .ToListAsync());
+        .AsQueryable();
+
+    if (from.HasValue) query = query.Where(o => o.OrderDateUtc >= from.Value);
+    if (to.HasValue) query = query.Where(o => o.OrderDateUtc <= to.Value);
+
+    query = query.OrderByDescending(o => o.OrderDateUtc);
+
+    var total = await query.CountAsync();
+    http.Response.Headers["X-Total-Count"] = total.ToString();
+
+    if (page.HasValue || pageSize.HasValue)
+    {
+        var p = Math.Max(1, page ?? 1);
+        var ps = Math.Clamp(pageSize ?? 50, 1, 200);
+        var items = await query.Skip((p - 1) * ps).Take(ps).ToListAsync();
+        return Results.Ok(items);
+    }
+    else
+    {
+        var items = await query.ToListAsync();
+        return Results.Ok(items);
+    }
+})
+.CacheOutput("OrdersCache");  // <— aktivera cachen här
+
+//TODO: Invalidera cache om ny order skapas eller order uppdateras
 
 // Hämta en order
 app.MapGet("/api/orders/{id:int}", async Task<Results<Ok<Order>, NotFound>> (int id, AppDb db) =>
@@ -162,75 +202,6 @@ app.MapGet("/api/orders/{id:int}", async Task<Results<Ok<Order>, NotFound>> (int
         .Include(x => x.Items)
         .FirstOrDefaultAsync(x => x.Id == id);
     return o is null ? TypedResults.NotFound() : TypedResults.Ok(o);
-});
-
-// Skapa order
-// app.MapPost("/api/orders", async Task<Results<Created<Order>, ValidationProblem, NotFound>>
-//     (OrderCreateDto dto, AppDb db) =>
-// {
-//     // Validera DTO
-//     var validationErrors = Validate(dto);
-//     if (validationErrors.Count > 0)
-//         return TypedResults.ValidationProblem(validationErrors);
-
-//     // Kontrollera kund
-//     var customer = await db.Customers.FindAsync(dto.CustomerId);
-//     if (customer is null) return TypedResults.NotFound();
-
-//     // Hämta produkter som ingår
-//     var productIds = dto.Items.Select(i => i.ProductId).Distinct().ToList();
-//     var products = await db.Products
-//         .Where(p => productIds.Contains(p.Id))
-//         .ToDictionaryAsync(p => p.Id);
-
-//     // Säkerställ att alla produkter finns
-//     var missing = productIds.Where(id => !products.ContainsKey(id)).ToList();
-//     if (missing.Any())
-//     {
-//         var err = new Dictionary<string, string[]>
-//         {
-//             ["Items"] = new[] { $"Unknown ProductId(s): {string.Join(",", missing)}" }
-//         };
-//         return TypedResults.ValidationProblem(err);
-//     }
-
-//     var order = new Order
-//     {
-//         CustomerId = customer.Id,
-//         OrderDateUtc = DateTime.UtcNow
-//     };
-
-//     foreach (var i in dto.Items)
-//     {
-//         var product = products[i.ProductId];
-//         order.Items.Add(new OrderItem
-//         {
-//             ProductId = product.Id,
-//             Quantity = i.Quantity,
-//             Price = product.Price // fryser priset vid ordertillfället
-//         });
-//     }
-
-//     db.Orders.Add(order);
-//     await db.SaveChangesAsync();
-
-//     return TypedResults.Created($"/api/orders/{order.Id}", order);
-// });
-
-// Uppdatera orderstatus (t.ex. markera som Shipped/Delivered/Cancelled)
-app.MapPatch("/api/orders/{id:int}/status", async Task<Results<NoContent, NotFound, ValidationProblem>>
-    (int id, OrderStatusUpdateDto dto, AppDb db) =>
-{
-    var validationErrors = Validate(dto);
-    if (validationErrors.Count > 0)
-        return TypedResults.ValidationProblem(validationErrors);
-
-    var o = await db.Orders.FindAsync(id);
-    if (o is null) return TypedResults.NotFound();
-
-    o.Status = dto.Status;
-    await db.SaveChangesAsync();
-    return TypedResults.NoContent();
 });
 
 // REVIEWS
@@ -276,14 +247,13 @@ app.MapPost("/api/products/{productId:int}/reviews", async Task<Results<Created<
     return TypedResults.Created($"/api/products/{productId}/reviews/{review.Id}", review);
 });
 
-//DELETE A REVIEW (REQUIRES AN API-KEY FROM THE HEADER)
 app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}",
     async Task<Results<NoContent, NotFound, UnauthorizedHttpResult>>
     (int productId, int reviewId, AppDb db, HttpContext httpContext) =>
 {
     // Kolla om rätt api-nyckel finns i headern
     if (!httpContext.Request.Headers.TryGetValue("X-Api-Key", out var apiKey) || apiKey != "qwerty123456")
-        return TypedResults.Unauthorized(); // <-- här ändrat
+        return TypedResults.Unauthorized();
 
     var review = await db.Reviews
         .FirstOrDefaultAsync(r => r.ProductId == productId && r.Id == reviewId);
@@ -294,25 +264,6 @@ app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}",
     await db.SaveChangesAsync();
     return TypedResults.NoContent();
 });
-
-
-// //DELETE A REVIEW (REQUIRES AN API-KEY FROM THE HEADER)
-// app.MapDelete("/api/products/{productId:int}/reviews/{reviewId:int}", async Task<Results<NoContent, NotFound>>
-//     (int productId, int reviewId, AppDb db, HttpContext httpContext) =>
-// {
-//     //Kolla om rätt api-nyckel finns i headern
-//     if (!httpContext.Request.Headers.TryGetValue("key", out var apiKey) || apiKey != "qwerty123456")
-//         return TypedResults.NotFound();
-
-//     var review = await db.Reviews
-//         .FirstOrDefaultAsync(r => r.ProductId == productId && r.Id == reviewId);
-
-//     if (review is null) return TypedResults.NotFound();
-
-//     db.Reviews.Remove(review);
-//     await db.SaveChangesAsync();
-//     return TypedResults.NoContent();
-// }).RequireAuthorization("ApiKey"); // Requires an API key in the header
 
 // Hjälpare för data annotations
 static Dictionary<string, string[]> Validate<T>(T instance)
@@ -334,6 +285,7 @@ static Dictionary<string, string[]> Validate<T>(T instance)
     return errors;
 }
 
+app.UseOutputCache();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
@@ -349,8 +301,4 @@ static string CsvEscape(string field)
 }
 
 static string CsvNum(decimal n) =>
-    n.ToString(CultureInfo.InvariantCulture);           // 398.78
-
-// Om du har double/float också:
-// static string CsvNum(double n) =>
-//     n.ToString("G", System.Globalization.CultureInfo.InvariantCulture);
+    n.ToString(CultureInfo.InvariantCulture);
