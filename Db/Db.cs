@@ -24,6 +24,8 @@ public class AppDb : DbContext
         modelBuilder.Entity<Customer>()
             .OwnsOne(c => c.Address);
 
+        modelBuilder.Entity<Order>().HasIndex(o => o.OrderDateUtc);
+
         modelBuilder.Entity<Order>()
             .HasMany(o => o.Items)
             .WithOne(i => i.Order!)
