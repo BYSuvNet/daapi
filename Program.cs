@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using DaApi.Domain;
+using System.Xml.Linq;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,6 +65,44 @@ app.MapGet("/api/products", async (AppDb db, string format = "json") =>
 
     return Results.Ok(products);
 }).WithName("GetProducts");
+
+// GET products as Google Merchant Center XML feed
+app.MapGet("/api/products/feed.xml", async (AppDb db) =>
+{
+    var products = await db.Products.AsNoTracking().Where(p => p.Category.ToLower() == "camping").ToListAsync();
+
+    XNamespace g = "http://base.google.com/ns/1.0";
+
+    var rss = new XElement("rss",
+        new XAttribute("version", "2.0"),
+        new XAttribute(XNamespace.Xmlns + "g", g),
+        new XElement("channel",
+            new XElement("title", "DaCampingStore"),
+            new XElement("link", "https://dacampingstore.com"),
+            new XElement("description", "Product feed for Google Merchant Center"),
+            products.Select(p => new XElement("item",
+                new XElement(g + "id", p.Id),
+                new XElement(g + "title", p.Name),
+                new XElement(g + "description", p.Description ?? ""),
+                new XElement(g + "link", "https://dacampingstore.com/products/" + p.Id),
+                new XElement(g + "image_link", $"https://picsum.photos/200/200?random={p.Id}"),
+                new XElement(g + "condition", "new"),
+                new XElement(g + "availability", "in stock"),
+                new XElement(g + "price", $"{p.Price:F2} SEK"),
+                new XElement(g + "shipping",
+                    new XElement(g + "country", "SE"),
+                    new XElement(g + "service", "Standard"),
+                    new XElement(g + "price", "59.00 SEK")
+                ),
+                new XElement(g + "brand", p.Brand ?? ""),
+                new XElement(g + "google_product_category", "1013")
+            ))
+        )
+    );
+
+    var xml = "<?xml version=\"1.0\"?>\n" + rss.ToString();
+    return Results.Content(xml, "application/rss+xml");
+}).WithName("GetGoogleMerchantCenterFeed");
 
 app.MapGet("/api/products/{id:int}", async Task<Results<Ok<Product>, NotFound>> (int id, AppDb db) =>
 {
